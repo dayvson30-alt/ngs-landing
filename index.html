@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="img/logo.png">
-<title>NGS Private Rides | Airport rides from The Villages, Ocala &amp; Winter Garden</title>
+<title>NGS Private Rides | Private rides from The Villages, Ocala &amp; Winter Garden</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,7 +38,6 @@
     --act:#93c9db; --act-ink:#001d48; --act-hover:#b4dbe8; color-scheme:dark;
   }
   *{box-sizing:border-box}
-  body{margin:0}
   html.lenis,html.lenis body{height:auto}
   .lenis.lenis-smooth{scroll-behavior:auto!important}
   .lenis.lenis-stopped{overflow:hidden}
@@ -104,33 +103,29 @@
   .hero-in .lede{max-width:36ch;color:var(--ink)}
   .offer{font-size:var(--s-small);color:var(--muted)}
   .offer b{color:var(--ink);background:var(--sky);color:var(--on-sky);padding:2px 8px;letter-spacing:.04em}
+  .ctas{display:flex;flex-direction:column;align-items:center;gap:12px}
+  .btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink);min-height:52px;font-size:var(--s-small)}
+  .btn.ghost:hover{background:color-mix(in srgb,var(--sky) 35%,transparent)}
   .hero-links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 28px;font-size:var(--s-small)}
   .hero-links a{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
   .hero-links a:hover{text-decoration-thickness:2px}
 
-  /* itinerary */
+  /* how booking works: the three steps of the booking page */
   .plan{background:var(--navy);color:var(--on-navy)}
   .plan h2{font-size:var(--s-xl)}
   .plan .intro{display:flex;flex-direction:column;gap:18px;max-width:46ch}
   .plan .intro p{color:var(--on-navy-soft)}
   .plan-body{display:flex;flex-direction:column;gap:32px}
-  .ask{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-  .ask label{display:flex;flex-direction:column;gap:6px;font-size:var(--s-small);color:var(--on-navy-soft);min-width:0}
-  .ask select,.ask input{font:inherit;font-size:var(--s-body);color:var(--ink);background:var(--paper);border:0;border-radius:0;min-height:52px;padding:0 14px;width:100%}
-  .ask select:focus-visible,.ask input:focus-visible{outline:3px solid var(--sky);outline-offset:0}
-  .slip{background:var(--paper);color:var(--ink);padding:28px 28px 44px;max-width:480px;width:100%;
-    clip-path:polygon(0 0,100% 0,100% calc(100% - 14px),95% 100%,90% calc(100% - 14px),85% 100%,80% calc(100% - 14px),75% 100%,70% calc(100% - 14px),65% 100%,60% calc(100% - 14px),55% 100%,50% calc(100% - 14px),45% 100%,40% calc(100% - 14px),35% 100%,30% calc(100% - 14px),25% 100%,20% calc(100% - 14px),15% 100%,10% calc(100% - 14px),5% 100%,0 calc(100% - 14px))}
-  .slip h3{font-family:var(--text);font-size:var(--s-body);letter-spacing:0;margin-top:26px;margin-bottom:6px}
-  .slip h3:first-child{margin-top:0}
-  .row{display:flex;align-items:baseline;gap:10px;padding:5px 0}
-  .row span:first-child{min-width:0}
-  .row .dots{flex:1;min-width:24px;border-bottom:4px dotted var(--muted);transform:translateY(-4px);opacity:.6}
-  .row .v{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:700}
-  .row.end{background:var(--ink);color:var(--paper);margin:26px -28px 0;padding:12px 28px;min-height:44px;font-weight:700}
-  .row.end .dots{border-bottom-color:var(--paper);opacity:.5}
-  .note{font-size:var(--s-small);color:var(--on-navy-soft);max-width:46ch}
-  .bump{animation:bump .5s var(--ease)}
-  @keyframes bump{from{background-color:color-mix(in srgb,var(--sky) 55%,transparent)}to{background-color:transparent}}
+  .steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;max-width:520px}
+  .steps li{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:20px;row-gap:4px;align-items:baseline;background:var(--paper);color:var(--ink);padding:22px 24px}
+  .steps .n{grid-row:span 2;font-family:var(--display);font-weight:700;font-size:var(--s-l);line-height:1;font-variant-numeric:tabular-nums}
+  .steps h3{font-family:var(--text);font-size:var(--s-body);letter-spacing:0}
+  .steps p{font-size:var(--s-small);color:var(--muted)}
+  .other{display:flex;flex-direction:column;align-items:flex-start;gap:14px;max-width:46ch}
+  .other p{color:var(--on-navy-soft)}
+  .plan .go,.other .btn{background:var(--sky);color:var(--on-sky)}
+  .plan .go:hover,.other .btn:hover{background:#b4dbe8}
+  .plan .go{align-self:flex-start}
 
   /* showcase: the car */
   .car-in{display:grid;grid-template-columns:minmax(0,1fr);gap:28px}
@@ -237,10 +232,8 @@
     .hero-in .logo{width:34%;max-width:130px}
     .hero .lane{height:28px}
     .hero-in h1{font-size:clamp(30px,8vw,40px)}
-    .ask{grid-template-columns:minmax(0,1fr)}
-    .slip{padding:22px 18px 40px}
-    .row.end{margin-inline:-18px;padding-inline:18px;flex-wrap:wrap;gap:2px 10px}
-    .row.end .dots{display:none}
+    .steps li{padding:18px;column-gap:16px}
+    .other .btn{width:100%}
     .cells a{min-height:56px;padding:0 6px}
     .names{columns:2;column-gap:20px;font-size:17px}
     .qa{columns:1}
@@ -275,10 +268,10 @@
   :is(.trio,.cells,.mbar) a[href^="tel:"]:hover{background:#136a27}
   :is(.trio,.cells,.mbar) a[href^="https://wa.me"]{background:#25d366;color:#052e14}
   :is(.trio,.cells,.mbar) a[href^="https://wa.me"]:hover{background:#1fbe5b}
+  body{margin:0}
 </style>
 </head>
 <body>
-
 
 <div class="split">
   <div class="col">
@@ -286,51 +279,39 @@
       <div class="lane" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
       <div class="card-in hero-in">
         <img class="logo" src="img/logo.png" width="360" height="353" alt="NGS Private Rides">
-        <h1 id="h-hero">Your door to the airport.</h1>
-        <p class="lede">Private, door-to-door rides from The Villages, Ocala, Wildwood and Winter Garden to Orlando (MCO) and Sanford (SFB). See your exact price and book online in about a minute.</p>
-        <a class="btn" href="https://ngsprivaterides.com/book-now#bro_reservation">See my price and book
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <h1 id="h-hero">Your private ride to and from Orlando.</h1>
+        <p class="lede">Door-to-door from The Villages, Ocala, Wildwood and Winter Garden: MCO, Sanford &amp; Tampa airports, concerts, cruises, parks and more.</p>
+        <div class="ctas">
+          <a class="btn" href="https://ngsprivaterides.com/book-now#bro_reservation">Airport ride: see my price
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn ghost" href="https://wa.me/13213177254?text=Hi%20NGS%2C%20I%27d%20like%20a%20quote%20for%20a%20private%20ride.">Other destination: ask for a quote</a>
+        </div>
         <nav class="trio" aria-label="Contact us">
-          <a href="sms:+13213177254?&amp;body=Hi%20NGS%2C%20I%27d%20like%20a%20quote%20for%20an%20airport%20ride."><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1.1-4.6A8 8 0 1 1 21 12z"/></svg>Text us</a>
+          <a href="sms:+13213177254?&amp;body=Hi%20NGS%2C%20I%27d%20like%20a%20quote%20for%20a%20private%20ride."><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1.1-4.6A8 8 0 1 1 21 12z"/></svg>Text us</a>
           <a href="tel:+13213177254"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Call</a>
-          <a href="https://wa.me/13213177254"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.8-1.4a.5.5 0 0 0 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3z"/></svg>WhatsApp</a>
+          <a href="https://wa.me/13213177254?text=Hi%20NGS%2C%20I%27d%20like%20a%20quote%20for%20a%20private%20ride."><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.8-1.4a.5.5 0 0 0 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3z"/></svg>WhatsApp</a>
         </nav>
         <p class="offer">First ride with us? Use code <b>FIRST15</b> for 15% off.</p>
-        <p class="hero-links"><a href="#plan">Plan my pickup time</a><a href="#faq">Questions</a><span>Call or text <a href="tel:+13213177254">(321) 317-7254</a></span></p>
+        <p class="hero-links"><a href="#plan">How booking works</a><a href="#faq">Questions</a><span>Call or text <a href="tel:+13213177254">(321) 317-7254</a></span></p>
       </div>
     </section>
 
     <section class="card plan" id="plan" data-stage="1" aria-labelledby="h-plan">
       <div class="card-in plan-body">
         <div class="intro">
-          <h2 id="h-plan">Plan your pickup</h2>
-          <p>Tell us where you live and when you fly. We suggest a pickup time with room to spare, and you confirm the exact time when you book.</p>
+          <h2 id="h-plan">Your price in three steps</h2>
+          <p>Airport rides are priced and booked online, any time of day.</p>
         </div>
-        <form class="ask" id="ask" onsubmit="return false">
-          <label for="town">I live in
-            <select id="town">
-              <option value="villages">The Villages</option><option value="ocala">Ocala</option><option value="wildwood">Wildwood</option>
-              <option value="ladylake">Lady Lake</option><option value="wintergarden">Winter Garden</option>
-            </select></label>
-          <label for="port">Flying from
-            <select id="port"><option value="MCO">Orlando (MCO)</option><option value="SFB">Sanford (SFB)</option></select></label>
-          <label for="flight">My flight leaves at
-            <input id="flight" type="time" value="13:00" step="300"></label>
-          <label for="kind">Flight type
-            <select id="kind"><option value="dom">Within the U.S.</option><option value="intl">International</option></select></label>
-        </form>
-        <div class="slip" aria-live="polite">
-          <h3>Before you travel</h3>
-          <div class="row"><span>Book online, price shown first</span><span class="dots"></span><span class="v">1 min</span></div>
-          <div class="row"><span>Pay by card, booking confirmed</span><span class="dots"></span><span class="v">Done</span></div>
-          <h3 id="dayhead">Travel day</h3>
-          <div class="row"><span>Driver at your door</span><span class="dots"></span><span class="v" id="o-pick">9:35 AM</span></div>
-          <div class="row"><span id="o-road">Ride from The Villages</span><span class="dots"></span><span class="v" id="o-drive">1 h 15 min</span></div>
-          <div class="row"><span id="o-curb">Departures curb at MCO</span><span class="dots"></span><span class="v" id="o-arrive">10:50 AM</span></div>
-          <div class="row"><span>Check-in and security</span><span class="dots"></span><span class="v" id="o-buffer">2 h</span></div>
-          <div class="row end"><span id="o-end">Your 1:00 PM flight</span><span class="dots"></span><span class="v" id="o-total">3 h 25 min door to gate</span></div>
+        <ol class="steps">
+          <li><span class="n">1</span><h3>Enter your trip</h3><p>Your pickup address, the airport (MCO, Sanford or Tampa), date and time.</p></li>
+          <li><span class="n">2</span><h3>See your exact price</h3><p>One price for the whole car, with tax and tip shown before you pay.</p></li>
+          <li><span class="n">3</span><h3>Book and pay</h3><p>Pay by card and your ride is confirmed. Flying back too? Book the ride home now.</p></li>
+        </ol>
+        <a class="btn go" href="https://ngsprivaterides.com/book-now#bro_reservation">Start step 1</a>
+        <div class="other">
+          <p>Going somewhere else, like a concert, the cruise port or a park? Send us a message and we reply with a price.</p>
+          <a class="btn" href="https://wa.me/13213177254?text=Hi%20NGS%2C%20I%27d%20like%20a%20quote%20for%20a%20private%20ride.">Other destination: ask for a quote</a>
         </div>
-        <p class="note">Drive times are typical for a weekday without heavy traffic, plus 15 minutes of margin. Your driver follows your flight on the day.</p>
       </div>
     </section>
 
@@ -347,9 +328,9 @@
         <p class="desc" id="car-desc">A quiet sedan for one or two travelers and their suitcases. It comes for you alone, at the time you choose, and goes straight to the terminal.</p>
         <div class="cells">
           <a href="https://ngsprivaterides.com/book-now#bro_reservation">See prices for each car</a>
-          <a href="sms:+13213177254?&amp;body=Hi%20NGS%2C%20I%27d%20like%20a%20quote%20for%20an%20airport%20ride.">Text us</a>
+          <a href="sms:+13213177254?&amp;body=Hi%20NGS%2C%20I%27d%20like%20a%20quote%20for%20a%20private%20ride.">Text us</a>
           <a href="tel:+13213177254">Call</a>
-          <a href="https://wa.me/13213177254">WhatsApp</a>
+          <a href="https://wa.me/13213177254?text=Hi%20NGS%2C%20I%27d%20like%20a%20quote%20for%20a%20private%20ride.">WhatsApp</a>
         </div>
       </div>
     </section>
@@ -377,6 +358,10 @@
       <p class="gap"></p>
       <p class="kind">And back home</p>
       <p>From any of them, on your landing time</p>
+      <p class="gap"></p>
+      <p class="kind">Or anywhere else</p>
+      <p>Concerts and shows</p><p>Cruise ports</p><p>Theme parks</p>
+      <p><a href="https://wa.me/13213177254?text=Hi%20NGS%2C%20I%27d%20like%20a%20quote%20for%20a%20private%20ride.">Ask for a quote</a></p>
     </div>
   </div>
 </section>
@@ -410,7 +395,8 @@
   <div class="grid12">
     <div class="head"><h2 id="h-faq">Good questions</h2></div>
     <div class="qa">
-      <p><b>Is the ride shared with other people?</b> No. The car comes for you and your party only and drives straight to the airport.</p>
+      <p><b>Is the ride shared with other people?</b> No. The car comes for you and your party only and drives straight to where you are going.</p>
+      <p><b>Do you only go to airports?</b> No. Airports are what we do most, but we also drive to concerts, cruise ports, theme parks and more. Text or WhatsApp us for a quote.</p>
       <p><b>How do I see the price?</b> Enter your pickup address, airport and date on the booking page. The price for the car appears before you pay, with tax and tip shown.</p>
       <p><b>How do I pay?</b> By card, online, when you book.</p>
       <p><b>What if my flight is late?</b> We follow your flight. If it lands early or late, your driver adjusts.</p>
@@ -418,7 +404,7 @@
       <p><b>Can you get through the gate in my community?</b> Yes. Add the gate details or a visitor pass note when you book.</p>
       <p><b>Can I book a ride for my parents?</b> Yes. Book in your name and add their phone number in the notes so the driver can reach them.</p>
       <p><b>Do you have car seats?</b> Tell us the ages of the children when you book and we will have the right seats ready.</p>
-      <p><b>Which airports do you serve?</b> Orlando International (MCO) and Orlando Sanford (SFB) every day, and Tampa International (TPA) on request.</p>
+      <p><b>Which airports do you serve?</b> Orlando International (MCO), Orlando Sanford (SFB) and Tampa International (TPA).</p>
       <p><b>I need to change my booking.</b> Call or text (321) 317-7254. A real person answers.</p>
     </div>
   </div>
@@ -431,9 +417,9 @@
     <p>Book online in about a minute, or text or call (321) 317-7254.</p>
     <a class="btn" href="https://ngsprivaterides.com/book-now#bro_reservation">See my price and book</a>
     <nav class="trio dark" aria-label="Contact us">
-      <a href="sms:+13213177254?&amp;body=Hi%20NGS%2C%20I%27d%20like%20a%20quote%20for%20an%20airport%20ride.">Text us</a>
+      <a href="sms:+13213177254?&amp;body=Hi%20NGS%2C%20I%27d%20like%20a%20quote%20for%20a%20private%20ride.">Text us</a>
       <a href="tel:+13213177254">Call</a>
-      <a href="https://wa.me/13213177254">WhatsApp</a>
+      <a href="https://wa.me/13213177254?text=Hi%20NGS%2C%20I%27d%20like%20a%20quote%20for%20a%20private%20ride.">WhatsApp</a>
     </nav>
   </div>
 </section>
@@ -446,23 +432,23 @@
       <img class="mark" src="img/logo.png" width="360" height="353" alt="NGS Private Rides">
       <nav aria-label="Page">
         <a href="https://ngsprivaterides.com/book-now#bro_reservation">Book a ride</a>
-        <a href="#plan">Plan my pickup</a>
+        <a href="#plan">How booking works</a>
         <a href="#where">Where we drive</a>
         <a href="#prices">Prices</a>
         <a href="#faq">Questions</a>
       </nav>
     </div>
     <div class="contact">
-      <p><b><a href="sms:+13213177254?&amp;body=Hi%20NGS%2C%20I%27d%20like%20a%20quote%20for%20an%20airport%20ride.">Text (321) 317-7254</a></b>A person replies</p>
+      <p><b><a href="sms:+13213177254?&amp;body=Hi%20NGS%2C%20I%27d%20like%20a%20quote%20for%20a%20private%20ride.">Text (321) 317-7254</a></b>A person replies</p>
       <p><b><a href="tel:+13213177254">Call (321) 317-7254</a></b>Every day</p>
-      <p><b><a href="https://wa.me/13213177254">WhatsApp</a></b>Same number</p>
+      <p><b><a href="https://wa.me/13213177254?text=Hi%20NGS%2C%20I%27d%20like%20a%20quote%20for%20a%20private%20ride.">WhatsApp</a></b>Same number</p>
     </div>
     <p class="legal">© 2026 NGS Private Rides · Davenport, Florida · <a href="https://ngsprivaterides.com/privacy-policy">Privacy</a></p>
   </div>
 </footer>
 
 <nav class="mbar" aria-label="Quick actions">
-  <a href="sms:+13213177254?&amp;body=Hi%20NGS%2C%20I%27d%20like%20a%20quote%20for%20an%20airport%20ride."><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1.1-4.6A8 8 0 1 1 21 12z"/></svg>Text</a>
+  <a href="sms:+13213177254?&amp;body=Hi%20NGS%2C%20I%27d%20like%20a%20quote%20for%20a%20private%20ride."><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1.1-4.6A8 8 0 1 1 21 12z"/></svg>Text</a>
   <a href="tel:+13213177254"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Call</a>
   <a class="book" href="https://ngsprivaterides.com/book-now#bro_reservation">Book a ride</a>
 </nav>
@@ -519,47 +505,7 @@
     });
   }
 
-  /* --- pickup planner: town + airport → typical drive minutes --- */
-  var DRIVE = {
-    villages:{MCO:75,SFB:60,name:'The Villages'}, ocala:{MCO:95,SFB:85,name:'Ocala'},
-    wildwood:{MCO:70,SFB:65,name:'Wildwood'}, ladylake:{MCO:75,SFB:55,name:'Lady Lake'},
-    wintergarden:{MCO:30,SFB:40,name:'Winter Garden'}
-  };
   var $ = function(id){return document.getElementById(id)};
-  function clock(min){
-    min = ((min % 1440) + 1440) % 1440;
-    var h = Math.floor(min/60), m = min%60, ap = h>=12?'PM':'AM', h12 = h%12||12;
-    return h12 + ':' + (m<10?'0':'') + m + ' ' + ap;
-  }
-  function dur(min){
-    var h = Math.floor(min/60), m = min%60;
-    return (h? h+' h':'') + (h&&m?' ':'') + (m? m+' min':'');
-  }
-  function set(id, txt){
-    var el = $(id); if (el.textContent === txt) return;
-    el.textContent = txt;
-    if (!reduce){ var r = el.closest('.row'); r.classList.remove('bump'); void r.offsetWidth; r.classList.add('bump'); }
-  }
-  function plan(){
-    var t = DRIVE[$('town').value], port = $('port').value;
-    var parts = ($('flight').value || '13:00').split(':');
-    var dep = (+parts[0])*60 + (+parts[1]||0);
-    var buffer = $('kind').value === 'intl' ? 180 : 120;
-    var drive = t[port] + 15;
-    var arrive = dep - buffer;
-    var pick = Math.floor((arrive - drive)/5)*5;
-    set('o-pick', clock(pick));
-    set('o-drive', dur(drive));
-    set('o-arrive', clock(arrive));
-    set('o-buffer', dur(buffer));
-    set('o-curb', 'Departures curb at ' + port);
-    set('o-road', 'Ride from ' + t.name);
-    set('o-end', 'Your ' + clock(dep) + ' flight');
-    set('o-total', dur(dep - pick) + ' door to gate');
-    $('dayhead').textContent = pick < 0 ? 'The night before your flight' : 'Travel day';
-  }
-  ['town','port','flight','kind'].forEach(function(id){ $(id).addEventListener('input', plan); $(id).addEventListener('change', plan); });
-  plan();
 
   /* --- vehicle tabs --- */
   var CARS = {
@@ -587,7 +533,7 @@
 
     /* entrance for parts below the first screen */
     if (!reduce){
-      var parts = document.querySelectorAll('.plan .intro > *, .ask, .slip, .note, .car-in > *, .places .head > *, .names, .field > *, .faq h2, .qa p, .close .say > *, footer nav a, .contact');
+      var parts = document.querySelectorAll('.plan .intro > *, .steps li, .plan .go, .other, .car-in > *, .places .head > *, .names, .field > *, .faq h2, .qa p, .close .say > *, footer nav a, .contact');
       var vh = window.innerHeight;
       var groups = new Map();
       parts.forEach(function(el){
@@ -605,6 +551,5 @@
   }
 })();
 </script>
-
 </body>
 </html>
