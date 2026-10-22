@@ -134,7 +134,7 @@
 
   /* showcase: the car */
   .car-in{display:grid;grid-template-columns:minmax(0,1fr);gap:28px}
-  .car-in .plate{aspect-ratio:16/9;width:100%;object-fit:cover;object-position:50% 58%}
+  .car-in .plate{aspect-ratio:16/9;width:100%;object-fit:cover;object-position:50% 50%}
   .tabs{display:flex;flex-wrap:wrap;gap:6px 22px}
   .tabs button{font:inherit;font-size:var(--s-body);background:none;border:0;padding:6px 0;color:var(--muted);cursor:pointer;border-bottom:3px solid transparent}
   .tabs button[aria-selected="true"]{color:var(--ink);font-weight:700;border-bottom-color:var(--sky)}
@@ -336,7 +336,7 @@
 
     <section class="card" id="car" data-stage="2" aria-labelledby="h-car">
       <div class="card-in car-in">
-        <img class="plate" src="img/fleet.jpg" width="1400" height="1046" loading="lazy" alt="Four black vehicles parked under palm trees: a sedan, two SUVs and a van">
+        <img class="plate" src="img/fleet-palms.jpg" width="1024" height="572" loading="lazy" alt="Four black vehicles parked in a row under palm trees: a sedan, an SUV, a minivan and a passenger van">
         <div class="tabs" role="tablist" aria-label="Vehicle">
           <button role="tab" id="t-sedan" aria-selected="true" data-car="sedan">Sedan</button>
           <button role="tab" id="t-suv" aria-selected="false" data-car="suv">SUV</button>
